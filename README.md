@@ -4,7 +4,7 @@
 
 # AUTHORS
 Henry Ndubuaku\
-henry@medullaai.com
+ndubuakuhenry@gmail.com
 
 # ABSTRACT
 Language enhancement in this premise means transforming a bland body of text to its rich and nuanced paraphrase. Few-shot fine-tuning of large language models has become the panacea to all sequence-to-sequence problems. Such techniques are however complicated by dataset acquisition and training intricacies. Also, there is little control over the output during inference and  subtle differences in the input and output training pairs are difficult for accessible language models to learn. To this end, this work introduces PLEA, an algorithm that employs controllable computational linguistics to find positions in the input text to transform progressively, and a frozen mask-filling transformer to find the most appropriate replacements or insertions for each.
