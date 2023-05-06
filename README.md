@@ -1,4 +1,4 @@
-# PLEA: Progressive Language Enhancement Algorithm
+# PLEA: Progressive Language Enhancement Algorithm Using Masking Filling Transformers In A Markov Chain.
 
 ![Alt text](/images/plea.png "Plea Diagram")
 
