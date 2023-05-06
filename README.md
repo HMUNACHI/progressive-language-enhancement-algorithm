@@ -11,15 +11,15 @@ Language enhancement in this premise means transforming a bland body of text to 
 
 
 # BACKGROUND
-One of BERT's training pre-training process includes mask-filling (Delvin et. al, 2019)[1]. This invlolves randomly removing tokens from the input sentence and training the transformer to replace it, hence the model learns the most appropriate word to complete the sentence. Most inudtry applications of BERT focus on fewer shot transfer learning whereby the model (or some of its layers) is fine-tuned on relevant datasets. However, works like (Wu et. al, 2019)[2], (Zhang et. al 2021)[3] and (Luitel et. al, 2023)[4] demonstrate BERT's ability to find appropriate words to complete a sentence.
+One of BERT's training pre-training process includes mask-filling (Delvin et. al, 2019)[1]. This invlolves randomly removing tokens from the input sentence and training the transformer to replace it, hence the model learns the most appropriate word to complete the sentence. Most inudstry applications of BERT focus on fewer shot transfer learning whereby the model (or some of its layers) is fine-tuned on relevant datasets. However, works like (Wu et. al, 2019)[2], (Zhang et. al 2021)[3] and (Luitel et. al, 2023)[4] demonstrate BERT's ability to find appropriate words to complete a sentence.
 
 Language enhancement is different from grammar correction, it involves subtle changes in the input sentence to embellish its grammar. Consider the an input text like "Today's sales is better than before, numbers were very bad yesterday." The sample sentence above is both synctatically and semantically correct. However, simply inserting the adjective "much" before "better" transforms the sentence to "Today's sales is much better than before, numbers were very bad yesterday." This strengthens the message it conveys. Large language models discriminates such subtleties as demonstrated by (Wei et. al, 2022)[5]. However, minimal differences in input and output sequences are very difficult for accesible sequence-to-sequence neural networks to detect. To this end, this work proposes PLEA (Progressive Language Enhancement Algorithm).
 
 
 # APPROACH
-PLEA searches for words with specific fine-grained part-of-speech tags, then either inserts a supporting adjectvie/adverb before/after it or replaces the token. This is performed causally, while at each step optimizing for high sentence similarity between the input and the output.
+PLEA searches for words with specific fine-grained part-of-speech tags, then either inserts a supporting adjectvie/adverb before/after it or replaces the token. This is performed causally, while at each step optimizing for high sentence similarity between the input and the output. PLEA obeys the Markov property, it assums that future states depend only on the current state, not on the events that occurred before it.
 
-Rule-based comptational linguistics often encounter many compicating edge-cases, hence the lingustic rules were limited to the 4 below with minimal edge cases.
+Rule-based comptational linguistics often encounter many complicating edge-cases, hence the lingustic rules were limited to the 4 below with minimal edge cases.
 
 | TAG | NAME                  | EXAMPLE                    | ACTION              | EXAMPLE                            |
 | --- | --------------------  | -------------------------- | ------------------- | ---------------------------------- |
